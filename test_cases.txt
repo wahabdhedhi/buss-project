@@ -1,0 +1,85 @@
+SMART BUS - TEST CASES
+
+TC01 - View Available Routes
+Input: Select Option 1
+Expected Result: Available routes and route schedules are displayed.
+Actual Result: Routes and schedules displayed correctly.
+Status: PASS
+
+TC02 - Search Existing City
+Input: Search "Hyderabad"
+Expected Result: R101, R103 and R105 are displayed.
+Actual Result: Matching routes displayed correctly.
+Status: PASS
+
+TC03 - Search Invalid City
+Input: Search "Atlantis"
+Expected Result: "No matching route found."
+Actual Result: Correct message displayed.
+Status: PASS
+
+TC04 - Valid Ticket Booking
+Input:
+Passenger: Ahmed
+Age: 24
+Route: R101
+Seats: 2
+
+Expected Result:
+Booking ID B1001 generated.
+Total Fare: Rs. 2400
+Available seats reduced from 40 to 38.
+
+Actual Result: Booking completed correctly.
+Status: PASS
+
+TC05 - Book Zero Seats
+Input: 0 seats
+Expected Result: Booking rejected.
+Actual Result: "Number of seats must be greater than 0!"
+Status: PASS
+
+TC06 - Book More Than Available Seats
+Input: 50 seats on R101
+Expected Result: Booking rejected and seat availability remains unchanged.
+Actual Result: Booking rejected without changing seats.
+Status: PASS
+
+TC07 - Cancel Confirmed Booking
+Input: Cancel B1001
+Expected Result: Booking status becomes Cancelled and seats are restored.
+Actual Result: Booking cancelled and seats restored correctly.
+Status: PASS
+
+TC08 - Cancel Same Booking Again
+Input: Cancel B1001 again
+Expected Result: Cancellation rejected and seats are not restored again.
+Actual Result: "This booking is already cancelled!"
+Status: PASS
+
+TC09 - Empty Booking Report
+Input: Generate report before creating any booking.
+Expected Result: All booking totals and revenue are zero.
+Actual Result: All values displayed as zero.
+Status: PASS
+
+TC10 - Fully Book a Route
+Input: Book all 40 seats on R101.
+Expected Result: R101 shows 0/40 seats and "Fully Booked".
+Actual Result: Route displayed as Fully Booked.
+Status: PASS
+
+TC11 - Report After Cancellation
+Input: Generate report after cancelling a booking.
+Expected Result:
+Cancelled booking is counted as cancelled but excluded from reserved seats and revenue.
+
+Actual Result:
+Cancelled booking excluded from confirmed revenue and reserved seats.
+Status: PASS
+
+TC12 - Invalid Menu Choice
+Input: 9
+Expected Result: Helpful invalid choice message and program continues.
+Actual Result: "Invalid choice! Please select from 1 to 8."
+Status: PASS
